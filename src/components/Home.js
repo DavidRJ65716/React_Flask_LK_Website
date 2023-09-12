@@ -8,10 +8,13 @@ export class Home extends Component {
   state = {
     time: {
       CurrentTime: 1
+    },
+    date:{
+      curretDate: ""
     }
   }
 
-  getCurrentTime = ()=>{
+  getCurrentTime =()=>{
 
     
     fetch('/time').then(res=>res.json()).then(data =>{
@@ -20,10 +23,16 @@ export class Home extends Component {
           CurrentTime: data.time
         }
       });
-        
     },[]);
- 
-   
+
+    fetch('/date').then(res=>res.json()).then(data =>{
+      this.setState({
+        date: {
+          curretDate: data.date
+        }
+      });
+    },[]);
+       
   }
 
 
@@ -34,7 +43,7 @@ export class Home extends Component {
         <h1>Hello, world!</h1>
         <p>Welcome to your new single-page application, built with:</p>
         <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+          <li><a href='https://flask.palletsprojects.com/en/2.3.x/'>Flask </a> and <a href='https://www.python.org/'>C#</a> for cross-platform server-side code</li>
           <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
           <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
         </ul>
@@ -45,7 +54,9 @@ export class Home extends Component {
           <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
         </ul>
         <p>The <code>ClientApp</code> subdirectory is a <var>standard</var> React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-        <p>The CurrentTime is {this.getCurrentTime()}{this.state.time.CurrentTime.toLocaleString()}.</p>
+        <p>The Current Time in Seconds {this.state.time.CurrentTime.toLocaleString()}.</p>
+        <p>the Current Date is {this.state.date.curretDate.toLocaleString()}</p>
+        <button onClick={this.getCurrentTime}>Time</button>
       </div>
     );
   }
