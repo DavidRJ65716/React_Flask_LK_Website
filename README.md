@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# React_Flask_NameFolder_Website
+# React_Flask_LK_Website
 
 This project currently has no name.
 
@@ -7,5 +7,3 @@ This project currently has no name.
 
 
 =======
-# React_Flask_NameFolder_Website
->>>>>>> main
