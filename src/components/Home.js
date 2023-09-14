@@ -19,7 +19,7 @@ export class Home extends Component {
     this.getCurrentTime();
   }
 
-  //Gets time and date from Api
+  //Gets time and date from Api 
   getCurrentTime =()=>{
 
     fetch('/Api/time').then(res=>res.json()).then(data =>{

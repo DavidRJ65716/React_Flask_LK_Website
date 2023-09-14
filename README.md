@@ -16,5 +16,5 @@ Starts the flask api
  
 ## Implementaion
 
-npm init
+npm install
 
