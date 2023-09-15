@@ -14,10 +14,15 @@ export class Home extends Component {
     }
   }
 
+  constructor() {
+    super();
+    this.getCurrentTime();
+  }
+
+  //Gets time and date from Api 
   getCurrentTime =()=>{
 
-    
-    fetch('/time').then(res=>res.json()).then(data =>{
+    fetch('/Api/time').then(res=>res.json()).then(data =>{
       this.setState({
         time: {
           CurrentTime: data.time
@@ -25,7 +30,7 @@ export class Home extends Component {
       });
     },[]);
 
-    fetch('/date').then(res=>res.json()).then(data =>{
+    fetch('/Api/date').then(res=>res.json()).then(data =>{
       this.setState({
         date: {
           curretDate: data.date

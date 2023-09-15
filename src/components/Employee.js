@@ -8,14 +8,14 @@ export class Employee extends Component{
         input: {
             FirstName: "",
             LastName: "",
-            Deprt: "",
+            Depart: "",
             Email: "",
             Phone: 0,
         },
         error: {
             FirstName: false,
             LastName: false,
-            Deprt: false,
+            Depart: false,
             Email: false,
             Phone: false,
         }
