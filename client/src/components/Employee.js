@@ -60,17 +60,20 @@ export class Employee extends Component{
                     et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.
                 </p>
                 <form className='employInput'>
-                    <div className='nameInput'>
-                        <label htmlFor="FirstInput">
-                            First Name:
-                        </label> 
-                        <input 
-                            id='FirstInput'
-                            name="FirstName"
-                            type="text" 
-                            value={this.state.FirstName}
-                            onChange={this.handleInputChange}
-                        />
+                    <div className='row'>
+                        <div className='col'>
+                            <label htmlFor="FirstInput">
+                                First Name:
+                            </label> 
+                            <input 
+                                id='FirstInput'
+                                name="FirstName"
+                                type="text" 
+                                value={this.state.FirstName}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
+                        <div className='col'>
                         <label htmlFor="LastName" >
                             Last Name:
                         <input 
@@ -81,6 +84,7 @@ export class Employee extends Component{
                             onChange={this.handleInputChange}
                         />
                         </label>
+                        </div>
                     </div>
                     <div>
                         <label>
@@ -92,7 +96,15 @@ export class Employee extends Component{
                             value={this.state.Deprt}
                             onChange={this.handleInputChange}    
                         />
-                        {/*Add employ id*/}
+                        <label>
+                            Employee ID:
+                        </label>
+                        <input 
+                            name="ID"
+                            type="number"
+                            value={this.state.Deprt}
+                            onChange={this.handleInputChange}    
+                        />
                     </div>
                     <div>
                         <label>
