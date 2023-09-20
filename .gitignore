@@ -1,14 +1,14 @@
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+client/node_modules
+client/.pnp
+client/.pnp.js
 Api/venv
 
 # testing
-/coverage
+client/coverage
 
 # protection
-/build
+client/build
 
 # misc
 .DS_Store
