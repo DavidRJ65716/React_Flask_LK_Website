@@ -4,7 +4,6 @@ a.navbar-brand {
   word-break: normal;
 }
 
-
 html {
   font-size: 14px;
 }
@@ -16,6 +15,13 @@ html {
 }
 
 .logo_img {
+  
+  position: absolute;
+  left: 1%;
+  top: 0;
+}
+
+img:first-of-type{
   border-radius: 30px;
 }
 

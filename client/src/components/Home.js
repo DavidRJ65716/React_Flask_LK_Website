@@ -13,14 +13,15 @@ export class Home extends Component {
       curretDate: ""
     }
   }
-
+  
   constructor() {
     super();
     this.getCurrentTime();
+
   }
 
   //Gets time and date from Api 
-  getCurrentTime =()=>{
+  getCurrentTime =(event)=>{
 
     fetch('/Api/time').then(res=>res.json()).then(data =>{
       this.setState({
@@ -48,7 +49,7 @@ export class Home extends Component {
         <h1>Hello, world!</h1>
         <p>Welcome to your new single-page application, built with:</p>
         <ul>
-          <li><a href='https://flask.palletsprojects.com/en/2.3.x/'>Flask </a> and <a href='https://www.python.org/'>C#</a> for cross-platform server-side code</li>
+          <li><a href='https://flask.palletsprojects.com/en/2.3.x/'>Flask </a> and <a href='https://www.python.org/'>python</a> for cross-platform server-side code</li>
           <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
           <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
         </ul>
