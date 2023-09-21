@@ -1,5 +1,12 @@
 import React, { Component,useState } from 'react';
 import "./Employee.css";
+import {
+    MDBInput,
+    MDBCol,
+    MDBRow,
+    MDBCheckbox,
+    MDBBtn
+} from 'mdb-react-ui-kit';
 
 export class Employee extends Component{
     
@@ -11,6 +18,7 @@ export class Employee extends Component{
             Depart: "",
             Email: "",
             Phone: 0,
+            EmplId: 0
         },
         error: {
             FirstName: false,
@@ -18,6 +26,7 @@ export class Employee extends Component{
             Depart: false,
             Email: false,
             Phone: false,
+            EmplId: false
         }
     };
 
@@ -60,73 +69,73 @@ export class Employee extends Component{
                     et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.
                 </p>
                 <form className='employInput'>
-                    <div className='row'>
-                        <div className='col'>
-                            <label htmlFor="FirstInput">
-                                First Name:
-                            </label> 
-                            <input 
-                                id='FirstInput'
+                    <MDBRow className='mb-3'>
+                        <MDBCol>
+                            <MDBInput 
                                 name="FirstName"
-                                type="text" 
+                                type="text"
+                                label='First Name'
+                                className='form-control' 
                                 value={this.state.FirstName}
                                 onChange={this.handleInputChange}
                             />
-                        </div>
-                        <div className='col'>
-                        <label htmlFor="LastName" >
-                            Last Name:
-                        <input 
-                            id="LastName"
-                            name="LastName"
-                            type="text" 
-                            value={this.state.LastName}
-                            onChange={this.handleInputChange}
-                        />
-                        </label>
-                        </div>
-                    </div>
-                    <div>
-                        <label>
-                            Department:
-                        </label>
-                        <input 
-                            name="Deprt"
-                            type="text" 
-                            value={this.state.Deprt}
-                            onChange={this.handleInputChange}    
-                        />
-                        <label>
-                            Employee ID:
-                        </label>
-                        <input 
-                            name="ID"
-                            type="number"
-                            value={this.state.Deprt}
-                            onChange={this.handleInputChange}    
-                        />
-                    </div>
-                    <div>
-                        <label>
-                            Phone:
-                        </label>
-                        <input
-                            name="Phone"
-                            type="tel" 
-                            pattern='([0-9]{3})-[0-9]{3}-[0-9]{4})'
-                            value={this.state.Phone}
-                            onChange={this.handleInputChange}
-                        />
-                    <label>
-                        Email:
-                        <input
-                            name="Email"
-                            type="text"
-                            value={this.state.Email}
-                            onChange={this.handleInputChange}
-                        />
-                    </label>
-                    </div>
+                        </MDBCol>
+                        <MDBCol>
+                            <MDBInput 
+                                name="LastName"
+                                className='form-control'
+                                type="text"
+                                label="Last Name"
+                                value={this.state.LastName}
+                                onChange={this.handleInputChange}
+                            />
+                        </MDBCol>
+                    </MDBRow>
+                    <MDBRow  className='mb-3'>
+                        <MDBCol>
+                            <MDBInput 
+                                name="Deprt"
+                                className='form-control' 
+                                type="text"
+                                label="Department"
+                                value={this.state.Deprt}
+                                onChange={this.handleInputChange}    
+                            />
+                        </MDBCol>
+                        <MDBCol>
+                            <MDBInput 
+                                name="ID"
+                                className='form-control' 
+                                type="number"
+                                label="Employee ID"
+                                value={this.state.Deprt}
+                                onChange={this.handleInputChange}    
+                            />
+                        </MDBCol>
+                    </MDBRow>
+                    <MDBRow  className='mb-3'>
+                        <MDBCol>
+                            <MDBInput
+                                name="Phone"
+                                className='form-control'
+                                type="tel"
+                                label="Phone"
+                                pattern='([0-9]{3})-[0-9]{3}-[0-9]{4})'
+                                value={this.state.Phone}
+                                onChange={this.handleInputChange}
+                            />
+                        </MDBCol>
+                        <MDBCol>
+                            <MDBInput
+                                name="Email"
+                                className='form-control'
+                                type="email"
+                                label="Email"
+                                value={this.state.Email}
+                                onChange={this.handleInputChange}
+                            />  
+                        </MDBCol>
+                    </MDBRow>
                 </form>
                 <div>
                     <button onClick={this.handleSubmit}>Submit</button>
