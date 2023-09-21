@@ -5,8 +5,11 @@ import {
     MDBCol,
     MDBRow,
     MDBCheckbox,
-    MDBBtn
+    MDBBtn,
+    MDBContainer
 } from 'mdb-react-ui-kit';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 export class Employee extends Component{
     
@@ -28,6 +31,11 @@ export class Employee extends Component{
             Phone: false,
             EmplId: false
         }
+    };
+
+    date ={
+        value:0
+
     };
 
     constructor(props){
@@ -62,13 +70,15 @@ export class Employee extends Component{
     render (){    
 
         return (
-            <div className='Employee'>
+            <MDBContainer className='Employee'>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, 
                     aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat 
                     et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.
                 </p>
-                <form className='employInput'>
+                <MDBRow>
+                    <MDBCol>
+                    <form className='employInput'>
                     <MDBRow className='mb-3'>
                         <MDBCol>
                             <MDBInput 
@@ -136,11 +146,21 @@ export class Employee extends Component{
                             />  
                         </MDBCol>
                     </MDBRow>
-                </form>
-                <div>
-                    <button onClick={this.handleSubmit}>Submit</button>
-                </div>
-            </div>);
+                    </form>
+                
+                    <MDBRow id="emplybtn" className="mb-3">
+                        <MDBBtn
+                            className='mb-3'
+                            onClick={this.handleSubmit}>
+                                Submit
+                        </MDBBtn>
+                    </MDBRow>
+                </MDBCol>
+                    <MDBCol >
+                        <Calendar/>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>);
     }
 }
 
