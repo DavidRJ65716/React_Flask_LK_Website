@@ -12,3 +12,7 @@ code {
   background-color: #1b6fc242;
   border-color: #18aca0;
 }
+
+html, body {
+  height:100%;
+}
