@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 
 app = Flask(__name__, static_folder="../build", static_url_path='/')
+app.debug = True
 
 @app.route('/')
 def index():

@@ -60,14 +60,14 @@ export class Employee extends Component{
         });
     }
 
-    handleSubmit(event){
+    handleSubmit (event) {
 
         alert('Submited Employee: ' + this.state);
         console.log(this.state);
         //event.pre
     }
 
-    render (){    
+    render () {    
 
         return (
             <MDBContainer className='Employee'>
@@ -160,7 +160,8 @@ export class Employee extends Component{
                         <Calendar/>
                     </MDBCol>
                 </MDBRow>
-            </MDBContainer>);
+            </MDBContainer>
+        );
     }
 }
 
