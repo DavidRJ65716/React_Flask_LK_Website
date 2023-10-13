@@ -1,8 +1,8 @@
 //import ApiAuthorzationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
 //import { FetchData } from "./components/FetchData";
-import { Home } from "./components/pages/Home";
+import Home from "./components/pages/Home";
 import { Employee } from './components/pages/Employee';
-import { Cat } from './components/pages/Cat'
+import Cat from './components/pages/Cat'
 
 //json Array stroing pages paths
 const AppRoutes = [

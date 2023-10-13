@@ -11,10 +11,8 @@ export class MousePosition extends Component{
             mouseY: 0,
             tailX: 0,
             tailY: 0,
+            isVisble: true,
         };
-
-        //this.updatePosition = this.updatePosition.bind(this);
-        //this.cursorMovment = this.cursorMovment.bind(this);
 
         this.cursor = createRef();
         this.cursorTrailing = createRef();
@@ -24,6 +22,7 @@ export class MousePosition extends Component{
     componentDidMount() {
         document.addEventListener("mousemove", this.updatePosition);
         document.addEventListener("mouseenter", this.updatePosition);
+        //document.body.addEventListener("mouseleave",this.);
         this.cursorMovment();
     }
 
@@ -49,13 +48,13 @@ export class MousePosition extends Component{
         const diffY = mouseY - tailY;
 
         this.setState({
-            tailX: tailX + diffX / 10,
-            tailY: tailY + diffY / 10,
+            tailX: tailX + diffX / 2,
+            tailY: tailY + diffY / 2,
         },
         () => {
 
-            this.cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-            this.cursorTrailing.current.style.transform = `translate3d(${tailX}px, ${tailY}px, 0)`;
+            this.cursor.current.style.transform = `translate3d(${mouseX - 5}px, ${mouseY -105}px, 0)`;
+            this.cursorTrailing.current.style.transform = `translate3d(${tailX - 8}px, ${tailY - 108}px, 0)`;
             this.animationFrame = requestAnimationFrame(this.cursorMovment);
         });
     }
