@@ -65,11 +65,11 @@ export class MousePosition extends Component{
                 <div className="cursors">
                     <div 
                         className="cursor"
-                        ref={this.cursor}
+                        ref={null}
                     />
                     <div 
                         className='cursor'
-                        ref={this.cursorTrailing}
+                        ref={null}
                     />
                 </div>
             </div>
