@@ -11,9 +11,9 @@ import {
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-export class Employee extends Component{
+export default function Employee (){
     
-    static displayname = Employee.name;
+    /*static displayname = Employee.name;
     state = {
         input: {
             FirstName: "",
@@ -65,103 +65,102 @@ export class Employee extends Component{
         alert('Submited Employee: ' + this.state);
         console.log(this.state);
         //event.pre
-    }
+    }*/
 
-    render () {    
+    
 
-        return (
-            <MDBContainer className='Employee'>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, 
-                    aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat 
-                    et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.
-                </p>
-                <MDBRow>
+    return (
+        <MDBContainer className='Employee m-24'>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, 
+                aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat 
+                et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.
+            </p>
+            <MDBRow>
+                <MDBCol>
+                <form className='employInput'>
+                <MDBRow className='mb-3'>
                     <MDBCol>
-                    <form className='employInput'>
-                    <MDBRow className='mb-3'>
-                        <MDBCol>
-                            <MDBInput 
-                                name="FirstName"
-                                type="text"
-                                label='First Name'
-                                className='form-control' 
-                                value={this.state.FirstName}
-                                onChange={this.handleInputChange}
-                            />
-                        </MDBCol>
-                        <MDBCol>
-                            <MDBInput 
-                                name="LastName"
-                                className='form-control'
-                                type="text"
-                                label="Last Name"
-                                value={this.state.LastName}
-                                onChange={this.handleInputChange}
-                            />
-                        </MDBCol>
-                    </MDBRow>
-                    <MDBRow  className='mb-3'>
-                        <MDBCol>
-                            <MDBInput 
-                                name="Deprt"
-                                className='form-control' 
-                                type="text"
-                                label="Department"
-                                value={this.state.Deprt}
-                                onChange={this.handleInputChange}    
-                            />
-                        </MDBCol>
-                        <MDBCol>
-                            <MDBInput 
-                                name="ID"
-                                className='form-control' 
-                                type="number"
-                                label="Employee ID"
-                                value={this.state.Deprt}
-                                onChange={this.handleInputChange}    
-                            />
-                        </MDBCol>
-                    </MDBRow>
-                    <MDBRow  className='mb-3'>
-                        <MDBCol>
-                            <MDBInput
-                                name="Phone"
-                                className='form-control'
-                                type="tel"
-                                label="Phone"
-                                pattern='([0-9]{3})-[0-9]{3}-[0-9]{4})'
-                                value={this.state.Phone}
-                                onChange={this.handleInputChange}
-                            />
-                        </MDBCol>
-                        <MDBCol>
-                            <MDBInput
-                                name="Email"
-                                className='form-control'
-                                type="email"
-                                label="Email"
-                                value={this.state.Email}
-                                onChange={this.handleInputChange}
-                            />  
-                        </MDBCol>
-                    </MDBRow>
-                    </form>
-                
-                    <MDBRow id="emplybtn" className="mb-3">
-                        <MDBBtn
-                            className='mb-3'
-                            onClick={this.handleSubmit}>
-                                Submit
-                        </MDBBtn>
-                    </MDBRow>
-                </MDBCol>
-                    <MDBCol >
-                        <Calendar/>
+                        <MDBInput 
+                            name="FirstName"
+                            type="text"
+                            label='First Name'
+                            className='form-control' 
+                            value={null}
+                            onChange={null}
+                        />
+                    </MDBCol>
+                    <MDBCol>
+                        <MDBInput 
+                            name="LastName"
+                            className='form-control'
+                            type="text"
+                            label="Last Name"
+                            value={null}
+                            onChange={null}
+                        />
                     </MDBCol>
                 </MDBRow>
-            </MDBContainer>
-        );
-    }
+                <MDBRow  className='mb-3'>
+                    <MDBCol>
+                        <MDBInput 
+                            name="Deprt"
+                            className='form-control' 
+                            type="text"
+                            label="Department"
+                            value={null}
+                            onChange={null}    
+                        />
+                    </MDBCol>
+                    <MDBCol>
+                        <MDBInput 
+                            name="ID"
+                            className='form-control' 
+                            type="number"
+                            label="Employee ID"
+                            value={null}
+                            onChange={null}    
+                        />
+                    </MDBCol>
+                </MDBRow>
+                <MDBRow  className='mb-3'>
+                    <MDBCol>
+                        <MDBInput
+                            name="Phone"
+                            className='form-control'
+                            type="tel"
+                            label="Phone"
+                            pattern='([0-9]{3})-[0-9]{3}-[0-9]{4})'
+                            value={null}
+                            onChange={null}
+                        />
+                    </MDBCol>
+                    <MDBCol>
+                        <MDBInput
+                            name="Email"
+                            className='form-control'
+                            type="email"
+                            label="Email"
+                            value={null}
+                            onChange={null}
+                        />  
+                    </MDBCol>
+                </MDBRow>
+                </form>
+            
+                <MDBRow id="emplybtn" className="mb-3">
+                    <MDBBtn
+                        className='mb-3'
+                        onClick={null}>
+                            Submit
+                    </MDBBtn>
+                </MDBRow>
+            </MDBCol>
+                <MDBCol >
+                    <Calendar/>
+                </MDBCol>
+            </MDBRow>
+        </MDBContainer>
+    );
 }
 
