@@ -1,4 +1,4 @@
-import React, { Component,useEffect,useState } from 'react';
+import React, { useEffect,useState } from 'react';
 //import {Slide} from 'react-slideshow-image';
 //import 'react-slideshow-image/dist/styles.css'
 
