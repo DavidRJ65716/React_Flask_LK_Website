@@ -23,7 +23,7 @@ export class NavMenu extends Component {
       collapsed: !this.state.collapsed
     });
   }
-  //home/djking/projects/Practice_Website/ClientApp/src/components/layout/navbar/NavMenu.js
+
   render() {
     return (
       <header>
