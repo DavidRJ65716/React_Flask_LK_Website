@@ -15,5 +15,16 @@ Starts the flask api
  
 ## Implementaion
 
-npm install
+###Programs needed
+Node
+Python 3
+
+
+
+install python env in /Api
+source ./Api/venv/bin/activate
+install Flask into /Api/env
+run npm install in /client
+in /client
+
 
