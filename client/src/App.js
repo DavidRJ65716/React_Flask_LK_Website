@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 //import AuthorizeRoute from './components/api-authorization/AuthorizeRoute';
-import { Layout } from './components/layout/Layout';
+import Layout from './components/layout/Layout';
 import './custom.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
