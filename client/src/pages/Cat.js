@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { MousePosition } from './functions/MousePostion.js';
-import './Cat.css';
+import { MousePosition } from '../hooks/MousePostion.js';
+
 
 export default function Cat() {
         
     return(
-        <MousePosition/>
+        <div/>
     );
     
 }

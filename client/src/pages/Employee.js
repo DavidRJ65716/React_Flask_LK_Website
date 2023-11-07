@@ -1,5 +1,4 @@
-import React, { Component,useState } from 'react';
-import "./Employee.css";
+import React from 'react';
 import {
     MDBInput,
     MDBCol,
