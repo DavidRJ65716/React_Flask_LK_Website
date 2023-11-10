@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
-import { MousePosition } from '../hooks/MousePostion.js';
-
+import React from 'react';
+import useMousePostition from '../hooks/MousePostion.js';
 
 export default function Cat() {
-        
+    
+    const {X, Y} = useMousePostition();
+
     return(
-        <div/>
+        <p>
+            Your cursor position:
+        <br />
+            {JSON.stringify(useMousePostition())}
+        </p>
     );
     
 }

@@ -1,78 +1,28 @@
-import React,{ Component, createRef } from "react";
+import {useEffect, useState} from "react";
 
+const useMousePostition = () => {
 
-export class MousePosition extends Component{
-    
-    constructor(props){
-        super(props)
+    const [mousePosition, setMousePosition] = useState({X: 0, Y:0});
 
-        this.state = {
-            mouseX: 0,
-            mouseY: 0,
-            tailX: 0,
-            tailY: 0,
-            isVisble: true,
-        };
+    const updateMosuePosition = (eve) => {
+        const { clientX, clientY} = eve;
 
-        this.cursor = createRef();
-        this.cursorTrailing = createRef();
-        this.animationFrame = null;
-    } 
+        setMousePosition({clientX, clientY});
+    };
 
-    componentDidMount() {
-        document.addEventListener("mousemove", this.updatePosition);
-        document.addEventListener("mouseenter", this.updatePosition);
-        //document.body.addEventListener("mouseleave",this.);
-        this.cursorMovment();
-    }
+    useEffect(() =>{
 
-    componentWillUnmount() { 
-        document.removeEventListener("mousemove", this.updatePosition);
-        document.removeEventListener("mouseenter", this.updatePosition);
-        cancelAnimationFrame(this.animationFrame);
-    }
+        document.addEventListener('mousemove', updateMosuePosition, false);
+        document.addEventListener('mouseenter', updateMosuePosition, false);
+        //document.body.addEventListener("mouseleave", handleMouseLeave);
 
-    updatePosition = (evt) => {
-        const { clientX, clientY } = evt;
-        this.setState({
-            mouseX: clientX,
-            mouseY: clientY
-        });
-        
-    }
+        return () => {
+            document.removeEventListener('mousemove', updateMosuePosition, false);
+            document.removeEventListener('mouseenter', updateMosuePosition, false);
+        }
+    }, []);
 
-    cursorMovment = () => {
-        
-        const { mouseX, mouseY, tailX, tailY } = this.state;
-        const diffX = mouseX - tailX;
-        const diffY = mouseY - tailY;
+    return mousePosition;
+};
 
-        this.setState({
-            tailX: tailX + diffX / 2,
-            tailY: tailY + diffY / 2,
-        },
-        () => {
-
-            this.cursor.current.style.transform = `translate3d(${mouseX - 5}px, ${mouseY -105}px, 0)`;
-            this.cursorTrailing.current.style.transform = `translate3d(${tailX - 8}px, ${tailY - 108}px, 0)`;
-            this.animationFrame = requestAnimationFrame(this.cursorMovment);
-        });
-    }
-
-    render () {
-        return(
-            <div className="w3-container">
-                <div className="cursors">
-                    <div 
-                        className="cursor"
-                        ref={null}
-                    />
-                    <div 
-                        className='cursor'
-                        ref={null}
-                    />
-                </div>
-            </div>
-        );
-    }
-}
+export default useMousePostition;

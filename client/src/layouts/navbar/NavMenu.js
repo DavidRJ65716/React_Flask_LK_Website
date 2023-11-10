@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, Nav } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { 
+  Collapse, 
+  Navbar, 
+  NavbarBrand, 
+  NavbarToggler, 
+  NavItem, 
+  NavLink, 
+  Nav, 
+  UncontrolledDropdown, 
+  DropdownToggle, 
+  DropdownMenu, 
+  DropdownItem, 
+  NavbarText 
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 //import { LoginMenu } from '../../api-authorization/LoginMenu';
 import './NavMenu.css';
@@ -23,22 +37,34 @@ export default function NavMenu(props) {
         <NavbarToggler onClick={toggle} className="me-2" />
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!isOpen} navbar>
             <Nav className='mr-auto' navbar>
-              <NavItem>
+              {/*<NavItem>
                 <NavLink tag={Link} className="text-dark" to="/">
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} className="text-dark" to="/Employee">
-                  Name
+                Employee
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} className="text-dark" to="/Cat">
                   Cat
                 </NavLink>
-              </NavItem>
-            </Nav>      
+              </NavItem>*/}
+              <UncontrolledDropdown inNavbar nav>
+                <DropdownToggle caret nav>
+                  Menu
+                </DropdownToggle>
+                <DropdownMenu left>
+                  <DropdownItem tag={Link} className="text-dark" to="/">Home</DropdownItem>
+                  <DropdownItem tag={Link} className="text-dark" to="/Employee">Employee</DropdownItem>
+                  <DropdownItem tag={Link} className="text-dark" to="/Cat">Cat</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
           </Collapse>
       </Navbar>
     </header>
